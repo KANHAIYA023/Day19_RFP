@@ -3,10 +3,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UC3 {
-    static Scanner scanner = new Scanner(System.in);
-    public static void validEmail() {
-        System.out.println("Enter E-mail:");
-        String email = scanner.next();
+    static void validEmail(String email) {
+
         String regex = "^[a-zA-Z0-9]+([.][A-Za-z]+)*@[a-zA-Z]+[.]+[a-zA-Z]{2,3}+([.][A-Za-z]+)*$";
 
         Pattern pattern = Pattern.compile(regex);
@@ -17,4 +15,11 @@ public class UC3 {
         else
             System.out.println("email address is invalid");
     }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter E-mail:");
+        String email = scanner.next();
+        validEmail(email);
+    }
+
 }

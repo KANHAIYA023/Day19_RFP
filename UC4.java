@@ -3,11 +3,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UC4 {
-    static Scanner scanner = new Scanner(System.in);
-    public static void validMobileNumber() {
-
-        System.out.print("Enter your Mobile Number : ");
-        String phoneNo = scanner.nextLine();
+    static void validMobileNumber(String phoneNo) {
         String regex = "(91|0)?\\s?[6-9][0-9]{9}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher match = pattern.matcher(phoneNo);
@@ -17,4 +13,10 @@ public class UC4 {
         else
             System.out.println("invalid phone number");
     }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your Mobile Number : ");
+        String phoneNo = scanner.nextLine();
+    }
+
 }

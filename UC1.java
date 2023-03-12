@@ -3,11 +3,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UC1 {
-    static Scanner scanner = new Scanner(System.in);
-    public static void validFirstName() {
+    static void validFirstName(String fName){
 
-        System.out.println("Enter First Name:");
-        String fName = scanner.next();
         String regex = "^[A-Z]{1}[a-z]*";
 
         Pattern pattern = Pattern.compile(regex);
@@ -20,4 +17,10 @@ public class UC1 {
             System.out.println("invalid first name: ");
 
     }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter First Name:");
+        String fName = scanner.next();
+        validFirstName(fName);
+}
 }
